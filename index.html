@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Stone Work Calculator</title>
+<meta name="description" content="Premium saree stone-work payment & profit calculator">
+<meta name="theme-color" content="#0a0e1a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Stone Calc">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+<div class="bg-orb orb-3"></div>
+
+<div class="app">
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">💎</div>
+      <div class="brand-text">
+        <h1>Stone Work Calculator</h1>
+        <p>Saree stone-work payment &amp; profit</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="card input-card">
+      <div class="field">
+        <label for="sarees">Number of Sarees</label>
+        <input type="number" id="sarees" inputmode="numeric" min="0" step="1" placeholder="e.g. 100" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="stonesPerSaree">Stones per Saree</label>
+        <input type="number" id="stonesPerSaree" inputmode="numeric" min="0" step="1" placeholder="e.g. 1000" autocomplete="off">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="myRate">My Rate per Stone (₹)</label>
+          <input type="number" id="myRate" inputmode="decimal" min="0" step="0.0001" placeholder="0.008" value="0.008" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="workCost">Work Cost per Stone (₹)</label>
+          <input type="number" id="workCost" inputmode="decimal" min="0" step="0.0001" placeholder="0.007" value="0.007" autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <section class="results">
+
+      <div class="card result-card">
+        <span class="result-label">Total Stones</span>
+        <span class="result-value" id="totalStones">0</span>
+      </div>
+
+      <div class="result-grid">
+        <div class="card result-card">
+          <span class="result-label">Amount Received</span>
+          <span class="result-value" id="amountReceived">₹0</span>
+        </div>
+        <div class="card result-card">
+          <span class="result-label">Work Cost Total</span>
+          <span class="result-value" id="workCostTotal">₹0</span>
+        </div>
+      </div>
+
+      <div class="card profit-card" id="profitCard">
+        <div class="profit-glow"></div>
+        <span class="result-label profit-label">Profit / Amount Saved</span>
+        <span class="result-value profit-value" id="profit">₹0</span>
+        <div class="profit-sub">
+          <div class="profit-sub-item">
+            <span>Profit / Saree</span>
+            <strong id="profitPerSaree">₹0</strong>
+          </div>
+          <div class="profit-sub-divider"></div>
+          <div class="profit-sub-item">
+            <span>Profit / Stone</span>
+            <strong id="profitPerStone">₹0</strong>
+          </div>
+        </div>
+      </div>
+
+      <p class="formula-note">Profit = Total Stones × (My Rate − Work Cost)</p>
+
+    </section>
+
+  </main>
+
+  <div class="action-bar">
+    <button class="btn btn-reset" id="resetBtn" type="button">Reset</button>
+    <button class="btn btn-calculate" id="calcBtn" type="button">Calculate</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
